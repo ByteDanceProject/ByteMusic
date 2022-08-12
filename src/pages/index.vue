@@ -13,7 +13,7 @@
                                 </router-link>
                         </li>
                         <li>
-                               <router-link to="/l      istcate">
+                               <router-link to="/listcate">
                                 榜单
                                </router-link>
                         </li>
