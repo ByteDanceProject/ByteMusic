@@ -16,28 +16,28 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      redirect:"/home",
+      redirect: "/home",
       component: Index,
-      children:[
+      children: [
         {
-          path:"home",
-          component:Home
+          path: "home",
+          component: Home
         },
         {
-          path:"artists",
-          component:Artists
+          path: "artists",
+          component: Artists
         },
         {
-          path:"listcate",
-          component:Listcate
+          path: "listcate",
+          component: Listcate
         },
         {
-          path:"ucenter",
-          component:Ucenter
+          path: "ucenter",
+          component: Ucenter
         },
         {
-          path:"search",
-          component:Search
+          path: "search",
+          component: Search
         },
 
       ]
