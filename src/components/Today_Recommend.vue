@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="mod-albums">
         <div class="hd log url">
-            <h2>今日推荐</h2>
+            <h2>歌曲分类推荐</h2>
             <div>
                 更多
             </div>
@@ -14,6 +14,7 @@
                             <div class="album">
                                 <img :src="item.coverImgUrl" alt="item.title">
                                 <div class="name">{{item.name}}</div>
+                                <div class="author">{{item}}</div>
                             </div>
                         </div>
                     </div>
@@ -36,7 +37,7 @@ export default {
     this.$axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.musicList = res.data.list;
       })
       .catch((error) => {
@@ -97,5 +98,13 @@ export default {
   line-height: 14px;
   max-height: 28px;
   margin-bottom: 2px;
+}
+.mod-albums .gallery .card .author{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #999;
+    font-size: 12px;
+    line-height: 12px;
 }
 </style>
