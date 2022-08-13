@@ -1,7 +1,8 @@
 <template lang="html">
     <div class="">
-        我的
+        <span @click="$router.push('/ucenter')">我的</span>
     </div>
+
 </template>
 
 <script>
