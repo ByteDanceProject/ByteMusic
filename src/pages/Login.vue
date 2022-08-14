@@ -42,15 +42,15 @@
           <el-button type="primary" round class="submitBtn" @click="submitForm"
             >登录
           </el-button>
-        </el-form-item>
-        <div class="unlogin">
-          <router-link :to="{ path: '/forgetpwd' }"> 忘记密码? </router-link>
+        //</el-form-item>
+        //<div class="unlogin">
+          //<router-link :to="{ path: '/forgetpwd' }"> 忘记密码? </router-link>
           |
-          <router-link :to="{ path: '/register' }">
-            <a href="register.vue" target="_blank" align="right">注册新账号</a>
-          </router-link>
-        </div>
-      </el-form>
+          //<router-link :to="{ path: '/register' }">
+          //  <a href="register.vue" target="_blank" align="right">注册新账号</a>
+          //</router-link>
+      //  </div>
+     // </el-form>
     </div>
   </div>
 </template>
