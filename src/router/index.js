@@ -6,6 +6,7 @@ import Artists from '@/pages/artists'
 import Listcate from '@/pages/listcate'
 import Ucenter from '@/pages/ucenter'
 import Search from '@/pages/search'
+import Login from '@/pages/Login'
 
 
 
