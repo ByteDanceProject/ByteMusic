@@ -4,7 +4,9 @@
         <MusicList/>
         <songs/>
         <MusicListNav/>
-        <router-view/>
+        <keep-alive> <!--缓存-->
+            <router-view/>
+        </keep-alive>
     </div>
 </template>
 
