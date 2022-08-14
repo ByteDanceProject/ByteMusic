@@ -7,24 +7,23 @@
             </div>
         </div>
         <div class="container">
-                <div class="gallery">
-                    <div class="scroller">
-                        <!-- 遍历歌单图片 -->
-                        <div class="card url" v-for="(item, index) in playList" :key="index">
-                            <div class="album">
-                                <img :src="item.coverImgUrl" alt="item.name">
-                                <div class="name">{{item.name}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="gallery">
+              <div class="scroller">
+                  <!-- 遍历歌单图片 -->
+                  <div class="card url" v-for="(item, index) in playList" :key="index">
+                      <div class="album">
+                          <img :src="item.coverImgUrl" alt="item.name">
+                          <div class="name">{{item.name}}</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    
   name: "songs",
   data() {
     return {
@@ -44,11 +43,10 @@ export default {
         console.log(error);
       });
   },
-}
+};
 </script>
 
 <style scoped>
-
 .mod-albums {
   background: #b7b7b7;
   padding: 10px 17px;
@@ -101,12 +99,12 @@ export default {
   max-height: 28px;
   margin-bottom: 2px;
 }
-.mod-albums .gallery .card .author{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #999;
-    font-size: 12px;
-    line-height: 12px;
+.mod-albums .gallery .card .author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #999;
+  font-size: 12px;
+  line-height: 12px;
 }
 </style>

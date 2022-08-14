@@ -69,7 +69,7 @@ export default {
 
 .block-padding {
     padding: 10px 17px;
-    background-color: #fff;
+    background-color: #b7b7b7;
 }
 
 .title {
