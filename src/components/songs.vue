@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="mod-albums">
         <div class="hd log url">
-            <h2>今日推荐</h2>
+            <h2>今日推荐歌单</h2>
             <div>
                 更多
             </div>

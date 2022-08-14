@@ -8,6 +8,7 @@ import api from './api'
 import "./assets/css/common.css"
 
 
+
 Vue.prototype.$axios = Axios;
 Vue.prototype.HOST = "/api"
 Vue.prototype.$api = api;
