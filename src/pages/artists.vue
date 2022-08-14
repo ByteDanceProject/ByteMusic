@@ -1,12 +1,18 @@
 <template lang="html">
     <div class="">
-        歌手
+        <SingerList />
     </div>
 </template>
 
 <script>
+import SingerList from "../components/SingerList.vue";
 export default {
-}
+  name: "artists",
+  components: {
+    SingerList,
+    SingerList
+},
+};
 </script>
 
 <style>

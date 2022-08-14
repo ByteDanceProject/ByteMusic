@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import MusicList from "../../components/Music_List.vue"
+import MusicList from "../../components/Music_List.vue";
 export default {
-    data() {
-        return {
-            url:"/personalized/newsong"
-        }
-    },
-    components:{
+  data() {
+    return {
+      url: "/personalized/newsong",
+    };
+  },
+  components: {
     MusicList,
-}
-}
+  },
+};
 </script>
 
 <style>
