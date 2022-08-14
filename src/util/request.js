@@ -13,7 +13,7 @@ const errorHandle = (status,info) =>{
             console.log("客户端请求的结构正确，但是服务器不想处理它");
             break;
         case 404:
-            console.log("资源被围定义(网络请求地址错误)");
+            console.log("资源未被定义(网络请求地址错误)");
             break;
         case 500:
             console.log("执行请求处理代码时遇到了异常，它们就发送此响应代码");
