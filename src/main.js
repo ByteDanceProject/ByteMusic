@@ -4,9 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Axios from 'axios'
+import api from './api'
 
 Vue.prototype.$axios = Axios;
-Vue.prototype.HOST = "/cloud_music_api"
+Vue.prototype.HOST = "/api"
+Vue.prototype.$api = api;
+
 
 
 Vue.config.productionTip = false

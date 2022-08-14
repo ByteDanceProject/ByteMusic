@@ -11,11 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      "/cloud_music_api": {
+      "/api": {
         target: "https://netease-cloud-music-api-rosy-ten.vercel.app",
         changeOrigin: true,
         pathRewrite: {
-          '^/cloud_music_api': '/'
+          '^/api': '/'
         }
       }
     },

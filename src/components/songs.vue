@@ -12,7 +12,7 @@
                         <!-- 遍历歌单图片 -->
                         <div class="card url" v-for="(item, index) in playList" :key="index">
                             <div class="album">
-                                <img :src="item.coverImgUrl" alt="item.title">
+                                <img :src="item.coverImgUrl" alt="item.name">
                                 <div class="name">{{item.name}}</div>
                             </div>
                         </div>
@@ -37,8 +37,8 @@ export default {
     this.$axios
       .get(url)
       .then((res) => {
-        // this.playList = res.data.playlists;
-        console.log(res.data.playlists);
+        this.playList = res.data.playlists;
+        // console.log(res.data.playlists[0].id);
       })
       .catch((error) => {
         console.log(error);
@@ -50,7 +50,7 @@ export default {
 <style scoped>
 
 .mod-albums {
-  background: #fff666;
+  background: #b7b7b7;
   padding: 10px 17px;
   margin-top: 10px;
 }

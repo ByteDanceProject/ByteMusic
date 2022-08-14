@@ -37,8 +37,8 @@ export default {
     this.$axios
       .get(url)
       .then((res) => {
-        // console.log(res.data);
-        this.musicList = res.data.list;
+        console.log(res.data);
+        // this.musicList = res.data.list;
       })
       .catch((error) => {
         console.log(error);
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .mod-albums {
-  background: #fff666;
+  background: #b7b7b7;
   padding: 10px 17px;
 }
 .hd {
