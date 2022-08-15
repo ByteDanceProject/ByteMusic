@@ -13,10 +13,6 @@
                 <router-link to="/home/new">新歌榜</router-link>
                 <span class="gap-line"> </span>
             </li>
-            <li>
-                <router-link to="/home/king">king榜</router-link>
-                <span class="gap-line"> </span>
-            </li>
         </ul>
     </div>
 </template>
@@ -64,7 +60,7 @@ ul li {
 ul li a {
   display: block;
 }
-ul li a:active {
+ul li a.active {
   color: rgba(166, 13, 13, 0.867) !important;
 }
 .gap-line {
