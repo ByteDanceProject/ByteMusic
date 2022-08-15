@@ -7,7 +7,6 @@ import Listcate from '@/pages/listcate'
 import Ucenter from '@/pages/ucenter'
 import Search from '@/pages/search'
 import HotList from "@/pages/musiclist/hot_list"
-import KingList from "@/pages/musiclist/king_list"
 import NewList from "@/pages/musiclist/new_list"
 
 
@@ -34,10 +33,6 @@ export default new Router({
               path:"new",
               component:NewList
             },
-            {
-              path:"king",
-              component:KingList
-            }
           ]
         },
         {
