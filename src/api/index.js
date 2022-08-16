@@ -48,7 +48,8 @@ const api = {
      */
     getSearch(params){
         return get("/api/search",params)
-    }
+    },
+
 }
 
 export default api
