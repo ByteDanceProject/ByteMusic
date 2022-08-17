@@ -23,21 +23,10 @@ export default new Router({
         {
           path: "home",
           component: Home,
-          redirect:"home/hot",
-          children:[
-            {
-              path:"hot",
-              component:HotList
-            },
-            {
-              path:"new",
-              component:NewList
-            },
-          ]
         },
         {
           path: "artists",
-          component: Artists
+          component: Artists,
         },
         {
           path: "listcate",

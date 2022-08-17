@@ -1,46 +1,26 @@
 <template lang="html">
 <div class="index">
-
         <ul>
-                <li>
-                        <router-link to="/home">
-                        <img src="../assets/logo.png" alt="">
-                        </router-link>
-
-                </li>
-                <li>
-                        <router-link to="/artists">
-                                歌手
-                        </router-link>
-                </li>
-                <li>
-                        <router-link to="/listcate">
-                                榜单
-                        </router-link>
-                </li>
-                <li>
-                        <router-link to="/ucenter">
-                                我的
-                        </router-link>
-                </li>
-                <li>
-                        <router-link to="/search">
-                                搜索
-                        </router-link>
-                </li>
+                <li><router-link to="/home"><img src="../assets/logo.png" alt=""></router-link></li>
+                <li><router-link to="/artists">歌手</router-link></li>
+                <li><router-link to="/listcate">榜单</router-link></li>
+                <li><router-link to="/ucenter">我的</router-link></li>
+                <li><router-link to="/search">搜索</router-link></li>
         </ul>
         <router-view/>
 </div>
 </template>
 
 <script>
-export default {};
+
+export default {
+};
 </script>
 
 <style scoped>
 .index img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
 }
 
 .index ul {
@@ -60,4 +40,7 @@ export default {};
   font-size: 16px;
   color: #999;
 }
+/* .index ul li a:hover {
+  background-color: red;
+} */
 </style>
