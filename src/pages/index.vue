@@ -1,5 +1,6 @@
 <template lang="html">
 <div class="index">
+
         <ul>
                 <li>
                         <router-link to="/home">
