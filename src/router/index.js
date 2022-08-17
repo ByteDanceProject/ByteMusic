@@ -52,6 +52,11 @@ export default new Router({
           component: Search
         },
       ]
-    }
+    },
+    {
+      path:"/player/:id/:name/:image",
+      name:"Player",
+      component:() => import("../components/PlayDemo.vue")
+    },
   ]
 })
