@@ -1,12 +1,7 @@
 <template lang="html">
     <div class="">
-        <!-- <SwiperBanner/>  轮播图 -->
         <MusicList/>
         <songs/>
-        <MusicListNav/>
-        <keep-alive> <!--缓存-->
-            <router-view/>
-        </keep-alive>
     </div>
 </template>
 
@@ -14,7 +9,6 @@
 import songs from "../components/songs";
 import MusicList from "../components/MusicList";
 import MusicListNav from "./musiclist/music_listnav.vue";
-// import SwiperBanner from '../components/Swiper_Banner';
 
 export default {
   name: "home",
@@ -22,7 +16,6 @@ export default {
     songs,
     MusicList,
     MusicListNav,
-    // SwiperBanner,
   },
 };
 </script>

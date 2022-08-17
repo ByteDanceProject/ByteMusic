@@ -9,7 +9,7 @@
                     tag="div"
                     class="item"
                     :to="`/player/${item.id}/${item.name}/${setUrl(item.picUrl)}`"
-                    v-for="(item,index) in recommend"
+                    v-for="(item,index) in recommend.slice(0,9)"
                     :key="index"
                     :class="{ 'clear-padding': index%3 !== 1 }"
                 >

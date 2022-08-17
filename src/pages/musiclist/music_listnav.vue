@@ -6,11 +6,11 @@
         </div>
         <ul>
             <li>
-                <router-link to="/home/hot">热歌榜</router-link>
+                <router-link to="/listcate/hot">热歌榜</router-link>
                 <span class="gap-line"> </span>
             </li>
             <li>
-                <router-link to="/home/new">新歌榜</router-link>
+                <router-link to="/listcate/new">新歌榜</router-link>
                 <span class="gap-line"> </span>
             </li>
         </ul>

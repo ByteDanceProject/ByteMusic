@@ -41,7 +41,18 @@ export default new Router({
         },
         {
           path: "listcate",
-          component: Listcate
+          redirect: "/listcate/hot",
+          component: Listcate,
+          children:[
+            {
+              path:"hot",
+              component:HotList
+            },
+            {
+              path:"new",
+              component:NewList
+            },
+          ]
         },
         {
           path: "ucenter",
