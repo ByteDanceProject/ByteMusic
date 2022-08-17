@@ -8,7 +8,7 @@ import Ucenter from '@/pages/ucenter'
 import Search from '@/pages/search'
 import HotList from "@/pages/musiclist/hot_list"
 import NewList from "@/pages/musiclist/new_list"
-
+import PlayDemo from "@/components/PlayDemo"
 
 Vue.use(Router)
 
@@ -51,6 +51,11 @@ export default new Router({
           path: "search",
           component: Search
         },
+        // 播放组件
+        {
+          path:"playdemo",
+          component:PlayDemo
+        }
       ]
     },
     {
