@@ -1,14 +1,16 @@
 <template>
   <div class="mod-albums">
-    <div class="container">
-      <div class="pic">
-        <img :src="pic" alt="" />
+    <router-link to="artistsDetial">
+      <div class="container">
+        <div class="pic">
+          <img :src="pic" alt="" />
+        </div>
+        <div class="message">
+          <span class="name">{{ name }}</span>
+          <span class="author">{{ singermessage.briefDesc }}</span>
+        </div>
       </div>
-      <div class="message">
-        <span class="name">{{ name }}</span>
-        <span class="author">{{ singermessage.briefDesc }}</span>
-      </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
 
 <style scoped>
 .mod-albums {
-  background-color: rgb(251, 251, 253);
+  background-color: rgb(183, 183, 183);
   margin: 5px;
 }
 .container {
@@ -60,7 +62,12 @@ export default {
   height: 130px;
   margin: auto;
   position: relative;
-  background-color: rgb(183, 183, 183);
+  border-style: solid;
+  background-color: rgb(209, 207, 207);
+}
+.container:hover {
+  background-color: rgb(94, 91, 91);
+  box-shadow: 7px 7px 5px #888888;
 }
 .pic {
   width: 115px;
@@ -74,13 +81,17 @@ export default {
   float: left;
   margin-left: 15px;
   font-weight: 700;
+  color: black;
   position: absolute;
-  top: 7px;
+  top: 6px;
   left: 120px;
 }
 .message .author {
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: black;
   width: 200px;
-  height: 98px;
+  height: 97px;
   float: left;
   display: -webkit-box;
   width: auto;
@@ -89,7 +100,8 @@ export default {
   -webkit-line-clamp: 5;
   overflow: hidden;
   font-size: 14px;
-  margin: 5px 0 0 15px;
+  color: black;
+  margin: 2px 5px 0 15px;
   position: absolute;
   top: 25px;
   left: 120px;

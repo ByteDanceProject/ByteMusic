@@ -2,9 +2,6 @@
   <div class="mod-albums">
     <div class="hd log url">
       <h2>热门歌手榜单：</h2>
-      <div>
-        更多
-      </div>
     </div>
     <SingerList
       v-for="(item, index) in singerList"
@@ -13,6 +10,9 @@
       :name="item.name"
       :id="item.id"
     ></SingerList>
+    <div class="footer">
+      <span class="more"> 下拉加载更多</span>
+    </div>
   </div>
 </template>
 
@@ -48,7 +48,7 @@ export default {
 
 <style>
 .mod-albums {
-  background: #b7b7b7;
+  background: rgb(183, 183, 183);
   padding: 10px 17px;
 }
 .hd {
@@ -67,5 +67,19 @@ export default {
   width: 64px;
   font-size: 12px;
   text-align: right;
+}
+.footer {
+  text-align: center;
+  width: auto;
+  height: 40px;
+}
+.more {
+  border-style: solid;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 170%;
+  width: 150px;
+  height: 30px;
+  display: inline-block;
 }
 </style>

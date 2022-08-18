@@ -8,6 +8,9 @@ import Ucenter from '@/pages/ucenter'
 import Search from '@/pages/search'
 import HotList from "@/pages/musiclist/hot_list"
 import NewList from "@/pages/musiclist/new_list"
+import ArtistsDetial from "@/pages/artistsDetial"
+
+
 
 
 Vue.use(Router)
@@ -37,8 +40,13 @@ export default new Router({
         },
         {
           path: "artists",
-          component: Artists
+          component: Artists,
         },
+        {
+          path:"artistsDetial",
+          component:ArtistsDetial
+        }
+        ,
         {
           path: "listcate",
           redirect: "/listcate/hot",
