@@ -1,35 +1,53 @@
-const assert = require('assert')
-const axios = require('axios')
-const host = global.host || 'http://localhost:3000'
-
-console.log('注意: 测试登录需在 test/login.test.js 中填写账号密码!!!')
-const country_code = '1'
-const phone = '3156678705'
-const password = '1q2w3e4R'
-describe('测试登录是否正常', () => {
-  it('手机登录 code 应该等于200', (done) => {
-    const qs = {
-      countrycode:
-        process.env.NCM_API_TEST_LOGIN_COUNTRY_CODE || country_code || '',
-      phone: process.env.NCM_API_TEST_LOGIN_PHONE || phone || '',
-      password: process.env.NCM_API_TEST_LOGIN_PASSWORD || password || '',
-    }
-
-    axios
-      .get(`${host}/login/cellphone`, {
-        params: qs,
-      })
-      .then(({ status, data }) => {
-        if (status == 200) {
-          console.log('昵称:' + data.profile.nickname)
-          assert(data.code === 200)
-          done()
-        } else {
-          done('登录错误')
-        }
-      })
-      .catch((err) => {
-        done(err)
-      })
+methods:{
+   login()
+   {
+  axios.post('api/v1/accesstoken',{
+    accesstoken:this.info
   })
-})
+  .then(
+  res=>{
+  const info=this.info;
+  setCookie('accesstoken' ,this.info)
+  setCookie('name',res.data.loginname)
+  setCookie('number',res.data.number)
+  this.$router.push( {name:'mine',params:{user:res.data.loginname} } )
+  }
+)
+.catch(
+err => {
+alert(err)
+  }
+)
+ }
+
+ beforeRouteEnter(to,from,next)
+  {
+      if(to.meta.requireAuth){//此组件需要登录
+      if(getCookie('accesstoken')==null){
+        next({
+          path:'/ucenter'
+        })
+      }else{
+      next()
+      }
+}
+    else{
+      next();//否则不需要登录，直接进入路由
+      }
+    }
+//退出操作
+//退出登录
+logout() 
+{
+            delCookie('number')//名字要对应getCookie的值
+            delCookie('accesstoken')
+            delCookie('name')
+            this.$router.push({
+              path: " /ucenter"
+            })
+}
+  
+}
+
+
+
