@@ -6,12 +6,13 @@ import Artists from '@/pages/artists'
 import Listcate from '@/pages/listcate'
 import Ucenter from '@/pages/ucenter'
 import Search from '@/pages/search'
+import Mine from '@/pages/mine'
+import Register from '@/pages/register'
 import HotList from "@/pages/musiclist/hot_list"
 import NewList from "@/pages/musiclist/new_list"
 
 
 
->>>>>>> e2110bc77750aaed998d153c5a70e530290a0275
 
 Vue.use(Router)
 
@@ -57,9 +58,19 @@ export default new Router({
             },
           ]
         },
-        {
+       {
           path: "ucenter",
-          component: Ucenter
+          component: Ucenter,
+          children:[
+            {
+              path: "mine",
+              component: Mine
+            },
+            {
+              path:"register",
+              component:Register
+            }
+          ],
         },
         {
           path: "search",
