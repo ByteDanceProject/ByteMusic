@@ -78,7 +78,7 @@
       margin-left: 40px;
       }
 </style>
-<script lang="ts">
+<script lang="ts" setup>
   export default {
       name:'register',
       props: {

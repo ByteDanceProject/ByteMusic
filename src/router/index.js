@@ -77,10 +77,10 @@ export default new Router({
           component: Search
         },
         // 播放组件
-        {
-          path:"playdemo",
-          component:PlayDemo
-        }
+        // {
+        //   path:"playdemo",
+        //   component:PlayDemo
+        // }
       ]
     },
     {
