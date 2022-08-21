@@ -1,40 +1,37 @@
-<template><div class="infoshow">
+<!-- <template>
+<div class="infoshow">
         <el-row type="flex" class="row-bg" justify="center">
             <el-col :span="8">
                 <div class="user">
-                   
                 </div>
             </el-col>
             <el-col :span="16">
                 <div class="userinfo">
                     <div class="user-item">
                         <i class="fa fa-user"> <h1>我的</h1></i>
-                      
                     </div>
                     <div class="user-item">
                         <i class="fa fa-cog"></i>
-                      
                     </div>
                 </div>
             </el-col>
         </el-row>
-   
+</div>
 </template>
 
 <script>
-    export default {
-        name: 'mine',
-        computed: {
-            user() {
-                return this.$store.getters.user;
-            }
-        }
-    }
-
+export default {
+  name: "mine",
+  computed: {
+    user() {
+      return this.$store.getters.user;
+    },
+  },
+};
 </script>
 
 <style scoped>
-    .infoshow {
+ .infoshow {
         width: 100%;
         height: 100%;
         box-sizing: border-box;
@@ -77,4 +74,4 @@
         font-size: 28px;
         color: #333;
     }
-</style>
+</style> -->
