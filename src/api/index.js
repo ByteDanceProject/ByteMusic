@@ -4,50 +4,56 @@ const api = {
     /**
      * 获取推荐歌单
      */
-    getRecommend(){
+    getRecommend() {
         return get("/api/recommend/resource");
     },
     /**
      * 登陆接口
      */
-    login(params){
-        return get("/api/login/cellphone",params)
+    login(params) {
+        return get("/api/login/cellphone", params)
     },
     /**
      * 推荐歌曲
      */
-    getMusic(){
+    getMusic() {
         return get("/api/personalized/newsong")
     },
     /**
      * 歌单详情
      */
-    getMusicDetails(params){
-        return get("/api/playlist/detail",params)
+    getMusicDetails(params) {
+        return get("/api/playlist/detail", params)
     },
     /**
      * 播放
      */
-    getPlayer(params){
-        return get("/api/song/url",params)
+    getPlayer(params) {
+        return get("/api/song/url", params)
     },
     /**
      * 电台分类
      */
-    getDjCatetory(params){
-        return get("/api/dj/recommend/type",params)
+    getDjCatetory(params) {
+        return get("/api/dj/recommend/type", params)
     },
     /**
      * 获取歌词
      */
-    getLRC(params){
-        return get("/api/lyric",params)
+    getLRC(params) {
+        return get("/api/lyric", params)
     },
     /**
      * 搜索接口
      */
-    getSearch(params){
-        return get("/api/search",params)
+    getSearch(params) {
+        return get("/api/search", params)
+    },
+    /**
+     * 获取搜索建议
+     */
+    getSearchSuggest(params) {
+        return get("/api/search/suggest", params)
     }
 }
 
