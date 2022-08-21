@@ -46,6 +46,7 @@ const api = {
     /**
      * 搜索接口
      */
+
     getSearch(params) {
         return get("/api/search", params)
     },
@@ -54,7 +55,8 @@ const api = {
      */
     getSearchSuggest(params) {
         return get("/api/search/suggest", params)
-    }
+    },
+
 }
 
 export default api

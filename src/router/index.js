@@ -5,10 +5,13 @@ import Home from '@/pages/home'
 import Artists from '@/pages/artists'
 import Listcate from '@/pages/listcate'
 import Ucenter from '@/pages/ucenter'
+import Mine from '@/pages/mine'
+import Register from '@/pages/register'
 import HotList from "@/pages/musiclist/hot_list"
-import KingList from "@/pages/musiclist/king_list"
 import NewList from "@/pages/musiclist/new_list"
 const Search = () => import('@/pages/Search/index')
+
+
 
 Vue.use(Router)
 
@@ -33,10 +36,6 @@ export default new Router({
               path: "new",
               component: NewList
             },
-            {
-              path: "king",
-              component: KingList
-            }
           ]
         },
         {
@@ -45,11 +44,32 @@ export default new Router({
         },
         {
           path: "listcate",
-          component: Listcate
+          redirect: "/listcate/hot",
+          component: Listcate,
+          children: [
+            {
+              path: "hot",
+              component: HotList
+            },
+            {
+              path: "new",
+              component: NewList
+            },
+          ]
         },
         {
           path: "ucenter",
-          component: Ucenter
+          component: Ucenter,
+          children: [
+            {
+              path: "mine",
+              component: Mine
+            },
+            {
+              path: "register",
+              component: Register
+            }
+          ],
         },
         {
           path: "search",
@@ -107,8 +127,17 @@ export default new Router({
             },
           ]
         },
-
+        // 播放组件
+        {
+          path: "playdemo",
+          component: () => import("../components/PlayDemo.vue")
+        }
       ]
-    }
+    },
+    {
+      path: "/player/:id/:name/:image",
+      name: "Player",
+      component: () => import("../components/PlayDemo.vue")
+    },
   ]
 })

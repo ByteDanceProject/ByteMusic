@@ -77,15 +77,6 @@ export default {
       }
       this.getSuggest();
     }, 50),
-    // 发请求获取搜索建议
-    getSuggest() {
-      this.$store.dispatch("search/reqsearchSuggest", {
-        keywords: this.keywords,
-      });
-    },
-    searchUser() {
-      console.log("123");
-    },
   },
   mounted() {},
 };
@@ -115,8 +106,8 @@ export default {
   }
 }
 .index img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
 }
 
 .index ul {

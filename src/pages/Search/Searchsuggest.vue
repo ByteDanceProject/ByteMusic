@@ -58,6 +58,7 @@ export default {
 
 <style lang="less" scoped>
 .searchTips {
+  z-index: 100;
   width: 310px;
   background-color: white;
   box-shadow: 0 3px 6px #555;

@@ -1,114 +1,111 @@
-<template lang="html">
-    <div class="mod-albums">
-        <div class="hd log url">
-            <h2>歌手</h2>
-            <div>
-                更多
-            </div>
+<template>
+  <div class="mod-albums">
+    <router-link to="artistsDetial">
+      <div class="container">
+        <div class="pic">
+          <img :src="pic" alt="" />
         </div>
-        <div class="container">
-                <div class="gallery">
-                    <div class="scroller">
-                        <!-- 遍历歌单图片 -->
-                        <div class="card url" v-for="(item, index) in singerList" :key="index">
-                            <div class="album">
-                                <img :src="item.img1v1Url" alt="" @click="">
-                                <div class="name">{{item.name}}</div>
-                                <div class="author">{{}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
+        <div class="message">
+          <span class="name">{{ name }}</span>
+          <span class="author">{{ singermessage.briefDesc }}</span>
+        </div>
+      </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Singer",
+  name: "SingerList",
+  props: {
+    pic: {
+      type: String,
+      default: ""
+    },
+    name: {
+      type: String,
+      default: ""
+    },
+    id: {
+      type: Number,
+      default: 0
+    }
+  },
   data() {
     return {
-      singerList: [],
+      singermessage: []
     };
   },
   mounted() {
-    // 获取所有榜单 /toplist
-    var url = this.HOST + "/artist/list";
+    // 获取歌手详细信息
+    var url = this.HOST + `/artist/detail?id=${this.id}`;
     this.$axios
       .get(url)
-      .then((res) => {
-        console.log(res.data.artists[0].id);
-        this.singerList = res.data.artists;
+      .then(res => {
+        this.singermessage = res.data.data.artist;
+        console.log(this.singermessage);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
-  },
-  methods:{
-    
   }
 };
 </script>
 
-<style>
-
+<style scoped>
 .mod-albums {
-  background: #b7b7b7;
-  padding: 10px 17px;
+  background-color: rgb(183, 183, 183);
+  margin: 5px;
 }
-.hd {
-  display: flex;
-  margin: 14px 0 18px 0;
-}
-.hd h2 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-}
-.hd div {
-  width: 64px;
-  font-size: 12px;
-  text-align: right;
-}
-.mod-albums .gallery {
-  overflow: hidden;
-  margin: 0 -5px;
-}
-.mod-albums .gallery .card {
-  width: 33.3%;
-  float: left;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0 5px 10px;
-}
-.mod-albums .gallery .card .album {
+.container {
+  width: auto;
+  height: 130px;
+  margin: auto;
   position: relative;
-  /* position: fixed; */
+  border-style: solid;
+  background-color: rgb(209, 207, 207);
 }
-.mod-albums .gallery .card img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #eee;
+.container:hover {
+  background-color: rgb(94, 91, 91);
+  box-shadow: 7px 7px 5px #888888;
 }
-.mod-albums .gallery .card .name {
-  font-size: 12px;
-  overflow: hidden;
+.pic {
+  width: 115px;
+  float: left;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+}
+.message .name {
+  width: 200px;
+  float: left;
+  margin-left: 15px;
+  font-weight: 700;
+  color: black;
+  position: absolute;
+  top: 6px;
+  left: 120px;
+}
+.message .author {
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: black;
+  width: 200px;
+  height: 97px;
+  float: left;
+  display: -webkit-box;
+  width: auto;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-top: 4px;
-  line-height: 14px;
-  max-height: 28px;
-  margin-bottom: 2px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  font-size: 14px;
+  color: black;
+  margin: 2px 5px 0 15px;
+  position: absolute;
+  top: 25px;
+  left: 120px;
 }
-.mod-albums .gallery .card .author{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #999;
-    font-size: 12px;
-    line-height: 12px;
+.message span {
 }
 </style>
