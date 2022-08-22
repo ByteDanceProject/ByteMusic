@@ -8,11 +8,13 @@
     user-select: none;
     font-family: "微软雅黑";
 }
+
 img {
     border: none;
     max-width: 100%;
     vertical-align: middle;
 }
+
 body,
 p,
 form,
@@ -35,6 +37,7 @@ h6 {
     list-style: none;
     overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,
@@ -43,6 +46,7 @@ h5,
 h6 {
     font-size: 100%;
 }
+
 input,
 textarea {
     -webkit-user-select: text;
@@ -52,9 +56,11 @@ textarea {
     font-size: 1em;
     line-height: 1.5em;
 }
+
 table {
     border-collapse: collapse;
 }
+
 input,
 select,
 textarea {
@@ -62,32 +68,40 @@ textarea {
     border: none;
     background: none;
 }
+
 a {
     outline: 0;
     cursor: pointer;
 }
+
 a:link,
 a:active {
     text-decoration: none;
 }
+
 a:visited {
     text-decoration: none;
 }
+
 a {
     text-decoration: none;
     -webkit-touch-callout: none;
 }
+
 em,
 i {
     font-style: normal;
 }
+
 li,
 ol {
     list-style: none;
 }
+
 html {
     font-size: 16px;
 }
+
 .clear {
     clear: both;
     height: 0;
@@ -96,12 +110,15 @@ html {
     visibility: hidden;
     overflow: hidden;
 }
+
 .fl {
     float: left;
 }
+
 .fr {
     float: right;
 }
+
 body {
     margin: 0 auto;
     max-width: 750px;
@@ -110,10 +127,12 @@ body {
     color: #555;
     height: 100%;
 }
+
 a {
-    color: #555;
+    color: #000;
     text-decoration: none;
 }
+
 .clearfix {
     overflow: hidden;
     clear: both;
@@ -124,6 +143,6 @@ a {
     display: table;
 }
 
-.active{
+.active {
     color: red;
 }

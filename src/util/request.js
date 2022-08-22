@@ -1,8 +1,8 @@
 import axios from "axios"
 import qs from "querystring"
 
-const errorHandle = (status,info) =>{
-    switch(status){
+const errorHandle = (status, info) => {
+    switch (status) {
         case 400:
             console.log("服务器收到客户端通过PUT或者POST请求提交的表示，表示的格式正确，但服务器不懂它什么意思");
             break;
@@ -29,7 +29,7 @@ const errorHandle = (status,info) =>{
 
 // 创建axios的实例对象
 const instance = axios.create({
-    timeout:5000
+    timeout: 5000
 })
 
 // 处理并发请求方法
@@ -41,8 +41,8 @@ instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlenco
 
 // 请求拦截和响应拦截
 instance.interceptors.request.use(
-    config =>{
-        if(config.method === 'post'){
+    config => {
+        if (config.method === 'post') {
             config.data = qs.stringify(config.data);
         }
         return config
@@ -51,16 +51,16 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-    response => response.status === 200 ? Promise.resolve(response) : Promise.reject(response) ,
-    error =>{
+    response => response.status === 200 ? Promise.resolve(response) : Promise.reject(response),
+    error => {
         const { response } = error;
-        if(response){
+        if (response) {
             /**
              * 错误信息以状态码为主
              */
-            errorHandle(response.status,response.data);
+            errorHandle(response.status, response.data);
             return Promise.reject(response);
-        }else{
+        } else {
             console.log("请求被中断");
         }
     }
@@ -70,23 +70,23 @@ instance.interceptors.response.use(
  * 提供get和post的请求方式
  */
 
-export function get(url,params){
-    return new Promise((resolve,reject) =>{
-        instance.get(url,{
+export function get(url, params) {
+    return new Promise((resolve, reject) => {
+        instance.get(url, {
             params
-        }).then(res =>{
+        }).then(res => {
             resolve(res.data);
-        }).catch(err =>{
+        }).catch(err => {
             reject(err.data);
         })
     })
 }
 
-export function post(url,params){
-    return new Promise((resolve,reject) =>{
-        instance.post(url,params).then(res =>{
+export function post(url, params) {
+    return new Promise((resolve, reject) => {
+        instance.post(url, params).then(res => {
             resolve(res.data)
-        }).catch(err =>{
+        }).catch(err => {
             reject(err.data)
         })
     })
