@@ -9,6 +9,7 @@ import Mine from '@/pages/mine'
 import Register from '@/pages/register'
 import HotList from "@/pages/musiclist/hot_list"
 import NewList from "@/pages/musiclist/new_list"
+import artistsDetial from "@/pages/artistsDetial"
 const Search = () => import('@/pages/Search/index')
 
 
@@ -42,6 +43,12 @@ export default new Router({
           path: "artists",
           component: Artists
         },
+        {
+          path:"artistsDetial",
+          component: artistsDetial,
+          props:true
+        }
+        ,
         {
           path: "listcate",
           redirect: "/listcate/hot",
@@ -130,7 +137,7 @@ export default new Router({
         // 播放组件
         {
           path:"playdemo",
-          component:PlayDemo
+          component:() => import("../components/PlayDemo.vue")
         }
       ]
     },

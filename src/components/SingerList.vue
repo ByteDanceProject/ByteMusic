@@ -1,6 +1,11 @@
 <template>
   <div class="mod-albums">
-    <router-link to="artistsDetial">
+    <router-link
+      :to="{
+        path: 'artistsDetial',
+        query: { singerid: this.id, singername: this.name }
+      }"
+    >
       <div class="container">
         <div class="pic">
           <img :src="pic" alt="" />
@@ -43,7 +48,7 @@ export default {
       .get(url)
       .then(res => {
         this.singermessage = res.data.data.artist;
-        console.log(this.singermessage);
+        //console.log(this.singermessage);
       })
       .catch(error => {
         console.log(error);
@@ -91,7 +96,7 @@ export default {
   border-width: 2px;
   border-color: black;
   width: 200px;
-  height: 97px;
+  height: 93px;
   float: left;
   display: -webkit-box;
   width: auto;
@@ -105,7 +110,5 @@ export default {
   position: absolute;
   top: 25px;
   left: 120px;
-}
-.message span {
 }
 </style>

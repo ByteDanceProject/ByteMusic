@@ -37,7 +37,7 @@ export default {
       .then(res => {
         console.log(res.data.artists[0].id);
         this.singerList = res.data.artists;
-        console.log(this.singerList);
+        //console.log(this.singerList);
       })
       .catch(error => {
         console.log(error);
@@ -77,7 +77,7 @@ export default {
   border-style: solid;
   border-radius: 20px;
   text-align: center;
-  line-height: 170%;
+  line-height: 230%;
   width: 150px;
   height: 30px;
   display: inline-block;
